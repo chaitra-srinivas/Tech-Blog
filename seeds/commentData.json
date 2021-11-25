@@ -1,0 +1,18 @@
+[
+    {
+        "comment_content": "This is a great post!",
+        "user_id": 1,
+        "blog_id": 2
+    },
+    {
+        "comment_content": "I learnt a lot from this post!",
+        "user_id": 2,
+        "blog_id": 3
+
+    },
+    {
+        "comment_content": "I agree with this.",
+        "user_id": 3,
+        "blog_id": 2
+    }
+]
