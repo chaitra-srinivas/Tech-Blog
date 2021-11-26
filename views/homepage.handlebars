@@ -1,0 +1,9 @@
+<!-- Loop over each object in the projects array -->
+{{#each blogs as |blog| }}
+<div>
+ {{>blog-card blog }}
+</div>
+{{else}}
+<p>No blog posts to display</p>
+{{/each}}
+
