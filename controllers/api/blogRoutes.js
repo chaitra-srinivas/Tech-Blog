@@ -25,11 +25,7 @@ router.get("/", async (req, res) => {
       return blog.get({ plain: true });
     });
 
-    // pass serialized data and session flag into template
-    res.render("dashboard", {
-      blogs,
-      logged_in: req.session.logged_in,
-    });
+    res.status(200).json(blogs);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

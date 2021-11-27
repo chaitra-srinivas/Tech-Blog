@@ -1,12 +1,7 @@
-This is a test
-
-{{id}}
-
-{{title}}
-{{blog_content}}
-{{date_created}}
+{{>blog-card}}
 {{#each comments as |comment| }}
-{{comment_content}}
+<div>
+{{>comment-card}}
 {{/each}}
 
 <!--
