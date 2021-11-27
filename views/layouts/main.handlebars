@@ -1,43 +1,54 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
-  <link rel="stylesheet" href="/public/css/jass.css">
-  <link rel="stylesheet" href="/public/css/style.css">
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
- </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registry</title>
+    <link rel="stylesheet" href="/public/css/jass.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/public/css/style.css" />
+  </head>
 
+  <body>
+    <header>
+      <h1>
+        Tech Blog
+      </h1>
+    </header>
 
-<body>
-  <ul class="nav justify-content-end">
-    <li class="nav-item">
-    <a class="nav-link active" href="#">Home</a>
-  </li>
-   <li class="nav-item">
-    <a class="nav-link" href="#">Dashboard</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Login</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Logout</a>
-  </li>
-  </ul>
- 
-  <nav class="nav justify-content-center bg-light">
-   <h1>
-     Tech Blog
-    </h1>
-     </nav>
-  <main class="container container-fluid mt-5">
-    {{{ body }}}
-  </main>
-  <footer>
-      
-  </footer>
-</body>
+    <nav class="nav justify-content-start bg-light">
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
 
+        {{#if logged_in}}
+          <li class="nav-item">
+            <button id="logout" class="btn-no-style">Logout</button>
+          </li>
+        {{else}}
+          <li class="nav-item">
+            <a class="nav-link active" href="/login">Login</a>
+          </li>
+        {{/if}}
+      </ul>
+    </nav>
+
+    <main class="container container-fluid mt-5">
+      {{{body}}}
+    </main>
+    <footer>
+
+    </footer>
+  </body>
+
+<script src="./js/logout.js"></script>
 </html>

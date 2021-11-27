@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
     // pass serialized data and session flag into template
     res.render("homepage", {
       blogs,
-      logged_in: true,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     console.log(err);
@@ -37,7 +37,7 @@ router.get("/", async (req, res) => {
 
 // GET a single blog post by id
 
-router.get("/blog/:id", async (req, res) => {
+router.get("/blog/:id", withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -56,7 +56,7 @@ router.get("/blog/:id", async (req, res) => {
 
     res.render("blog", {
       ...blogById,
-      logged_in: true,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -66,13 +66,34 @@ router.get("/blog/:id", async (req, res) => {
 // The dashboard view - prevent unathorized access to route by using withAuth middleware
 
 
+// Use withAuth middleware to prevent access to route
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Blog }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 
 
 // When the user hits the /login end point check is session exists, redirect to dashboard if exists else redirect to login page
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect("/");
+    //todo: check if return is required
     return;
   } else {
     res.render("login");

@@ -14,9 +14,9 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/homepage");
+      document.location.replace("/");
     } else {
-      console.log("Bad here!");
+      alert(response.statusText);
     }
   }
 };
@@ -38,7 +38,7 @@ const signUpFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("/");
     } else {
       alert(response.statusText);
     }
