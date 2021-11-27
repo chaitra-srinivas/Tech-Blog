@@ -81,7 +81,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     res.render('dashboard', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      can_edit: (user.id === req.session.user_id)
     });
   } catch (err) {
     res.status(500).json(err);

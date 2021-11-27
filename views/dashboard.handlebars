@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col">
-    <h2>Welcome, {{name}}!</h2>
+    <h3>Welcome, {{name}}!</h3>
   </div>
 </div>
 
@@ -8,24 +8,29 @@
 
     {{#if blogs.length}}
     <div class="post-list">
-      <h3>Your Current Posts:</h3>
+      <h4>Your Current Posts:</h4>
       {{#each blogs as |blog|}}
       <div class="row">
         <div class="col-md-10 p-1">
-          {{>blog-card}}
+          {{>my-blog-card}}
         </div>
         <div class="col-md-2 p-4"><button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button></div>
       </div>
+    
       {{/each}}
     </div>
     {{/if}}
 </div>
 
-  <div><button onclick="newPostForm()">New Post</button></div>
+<div class="card">
+
+<div class="col-md-2 p-2">
+  <button id="newPost-btn" class="btn btn-sm btn-primary" onclick="newPostForm()">New Post</button>
+</div>
 
   <div class="row mt-4" id="newPost" style="display: none">
-    <div class="col-md-12">
-      <h3>Create a New Blog Post:</h3>
+    <div class="col-md-12 p-4">
+      <h4>Create a New Blog Post:</h4>
       <form class="form new-post-form">
         <div class="form-group">
           <label for="blog-title">Title:</label>
@@ -37,13 +42,15 @@
           <textarea class="form-input" id="blog-content" name="blog-content"></textarea>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-sm btn-primary">Submit</button>
         </div>
       </form>
     </div>
 
   </div>
 
+
+</div>
 
 
 

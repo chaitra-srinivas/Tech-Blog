@@ -2,34 +2,18 @@
 {{>blog-card-edit}}
 {{else}}
 {{>blog-card}}
-{{/if}}
-
- <div>
-           <textarea id="comment-text"></textarea><button id='comment-btn' data-id="{{id}}"> Comment </button>
+<div class="card" >
+<div class="wrapper p-2">
+  <textarea id="comment-text" cols="140" rows="2"></textarea>
+  <div class="col-md-2 p-2">
+  <button id='comment-btn' class="btn btn-sm btn-primary" data-id="{{id}}"> Comment </button>
   </div>
-
-
- 
+</div> 
+</div>
+<script src="/js/comment.js"></script>
+{{/if}}
 
 {{#each comments as |comment| }}
 {{>comment-card}}
 {{/each}}
 
-
-
-
-<!--
-    {
-  id: 2,
-  title: 'Authentication vs. Authorization',
-  blog_content: 'There is a difference between Authentication and Authorization. Authentication means confirming your own identity, whereas authorization means being allowed access to the system.',
-  date_created: 2021-11-26T21:51:20.000Z,
-  user_id: 2,
-  user: { name: 'Sal' },
-  comments: [
-    { comment_content: 'This is a great post!', user: [Object] },
-    { comment_content: 'I agree with this.', user: [Object] }
-  ]
-}
- -->
-<script src="/js/comment.js"></script>
