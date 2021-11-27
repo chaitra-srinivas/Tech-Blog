@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
     });
 
     // pass serialized data and session flag into template
-    res.render("homepage", {
+    res.render("dashboard", {
       blogs,
       logged_in: req.session.logged_in,
     });

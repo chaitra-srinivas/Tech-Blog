@@ -1,0 +1,25 @@
+This is a test
+
+{{id}}
+
+{{title}}
+{{blog_content}}
+{{date_created}}
+{{#each comments as |comment| }}
+{{comment_content}}
+{{/each}}
+
+<!--
+    {
+  id: 2,
+  title: 'Authentication vs. Authorization',
+  blog_content: 'There is a difference between Authentication and Authorization. Authentication means confirming your own identity, whereas authorization means being allowed access to the system.',
+  date_created: 2021-11-26T21:51:20.000Z,
+  user_id: 2,
+  user: { name: 'Sal' },
+  comments: [
+    { comment_content: 'This is a great post!', user: [Object] },
+    { comment_content: 'I agree with this.', user: [Object] }
+  ]
+}
+ -->
