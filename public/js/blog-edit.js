@@ -2,7 +2,7 @@ const blogUpdateHandler = async (event) => {
     event.preventDefault();
   
     const blog_id = document.querySelector('#blog-title').getAttribute('data-id');
-    const blog_title = document.querySelector('#blog-title').value.trim();
+    const blog_title = document.querySelector('#blog-title').value;
 
     const blog_content = document.querySelector('#card-text').value.trim();
   
