@@ -46,3 +46,12 @@ const delButtonHandler = async (event) => {
     .querySelector('.post-list')
     .addEventListener('click', delButtonHandler);
   
+   function newPostForm(){
+      const postForm = document.getElementById("newPost");
+      if (postForm.style.display === "none") {
+        postForm.style.display = "block";
+      } else {
+        postForm.style.display = "none";
+      }
+    }
+   

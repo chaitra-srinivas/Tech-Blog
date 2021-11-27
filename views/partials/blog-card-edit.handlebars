@@ -1,0 +1,15 @@
+
+<div class="card p-3 m-3">
+  <div class="card-header">
+      Created by: {{user.name}} on {{date_created}} 
+  
+       </div>
+  <div class="card-body">
+    <input id="blog-title" type="text" data-id="{{id}}" value="{{title}}"></input>
+    <textarea id="card-text"> {{blog_content}}</textarea>
+ <button id="blog-update">Update</button> 
+   </div>
+</div>
+<div></div>
+
+<script src="/js/blog-edit.js"></script>

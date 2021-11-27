@@ -30,11 +30,7 @@ router.post("/", withAuth, async (req, res) => {
       user_id: req.session.user_id,
     });
 
-    // serialize data so the template can read it
-
-    const newComment = commentData.map((comment) => {
-      return comment.get({ plain: true });
-    });
+    const newComment = commentData.get({ plain: true });
     res.status(200).json(newComment);
   } catch (err) {
     res.status(500).json(err);

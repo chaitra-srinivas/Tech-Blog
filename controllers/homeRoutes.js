@@ -56,7 +56,8 @@ router.get("/blogs/:id", withAuth, async (req, res) => {
     res.render("blog", {
       
       ...blogById,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      can_edit: (blogById.user_id === req.session.user_id)
     });
   } catch (err) {
     console.log(err);

@@ -1,8 +1,25 @@
+abcs
+{{can_edit}}
+This can 
+
+{{#if can_edit}}
+{{>blog-card-edit}}
+{{else}}
 {{>blog-card}}
+{{/if}}
+
+ <div>
+           <textarea id="comment-text"></textarea><button id='comment-btn' data-id="{{id}}"> Comment </button>
+  </div>
+
+
+ 
+
 {{#each comments as |comment| }}
-<div>
 {{>comment-card}}
 {{/each}}
+
+
 
 
 <!--
@@ -19,3 +36,4 @@
   ]
 }
  -->
+<script src="/js/comment.js"></script>
