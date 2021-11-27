@@ -76,12 +76,12 @@ THEN I am able to view comments but I am prompted to log in again before I can a
   ## Screenshots
 
   ![Home page](/public/assets/homepage.png)
-  ![Login page](/public/assets/loginpage.png)
-  ![Dashboard](/public/assets/dashboard.png)
-  ![New post](/public/assets/newpost.png)
-  ![Update post](/public/assets/updatepost.png)
-  ![Comment](/public/assets/comment.png)
 
+  ![Login page](/public/assets/loginpage.png)
+  
+  ![Dashboard](/public/assets/dashboard.png)
+ 
+ 
 
   ## Questions
 
