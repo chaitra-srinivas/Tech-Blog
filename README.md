@@ -60,6 +60,7 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 - [Installation](#installation)
 - [Usage](#usage)
 - [Screenshots](#screenshots)
+- [Deployed Application](#deployed-application)
 - [Questions](#questions)
 - [License](#license)
 
@@ -82,6 +83,8 @@ THEN I am able to view comments but I am prompted to log in again before I can a
   ![Dashboard](/public/assets/dashboard.png)
  
  
+  ## Deployed Application
+ [Tech Talk](https://tech-talk-21.herokuapp.com/)
 
   ## Questions
 
